@@ -1,4 +1,4 @@
-name: "Tag: Release"
+name: "Release"
 
 on:
   push:
@@ -16,7 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
         DALAMUD_HOME: /tmp/dalamud
-        IsCI: true
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3

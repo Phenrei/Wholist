@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
 using Dalamud.Game.ClientState.Objects.SubKinds;
-using Sirensong.Caching.Collections;
+using Sirensong.Cache.Collections;
+using Sirensong.Extensions;
 using Sirensong.Game.Enums;
-using Sirensong.Game.Extensions;
 using Wholist.Common;
 using Wholist.DataStructures;
 
@@ -123,23 +123,6 @@ namespace Wholist.Game
             foreach (var member in Services.PartyList)
             {
                 if (member.ObjectId == playerCharacter.ObjectId)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        /// <summary>
-        ///     Checks if the given <see cref="PlayerCharacter" /> is on the friend-list.
-        /// </summary>
-        /// <param name="player">The <see cref="PlayerCharacter" /> to check.</param>
-        /// <returns>True if the <see cref="PlayerCharacter" /> is on the friend-list, otherwise false.</returns>
-        internal static bool IsPlayerFriend(PlayerCharacter player)
-        {
-            foreach (var friend in Services.XivCommon.Functions.FriendList.List)
-            {
-                if (friend.Name.TextValue == player.Name.TextValue && friend.HomeWorld == player.HomeWorld.Id)
                 {
                     return true;
                 }

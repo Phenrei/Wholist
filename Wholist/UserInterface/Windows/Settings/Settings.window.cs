@@ -1,6 +1,7 @@
 using System.Numerics;
 using Dalamud.Interface.Windowing;
 using ImGuiNET;
+using Sirensong.UserInterface.Style;
 using Sirensong.UserInterface.Windowing;
 using Wholist.Common;
 using Wholist.Resources.Localization;
@@ -35,6 +36,7 @@ namespace Wholist.UserInterface.Windows.Settings
                 if (ImGui.BeginChild("PluginSettingsSidebarChild"))
                 {
                     SettingsSidebar.Draw(this.logic);
+                    ImGui.Dummy(Spacing.SidebarSectionSpacing);
                 }
                 ImGui.EndChild();
 

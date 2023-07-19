@@ -2,7 +2,8 @@ using System;
 using System.Numerics;
 using Dalamud.Game.ClientState.Objects.SubKinds;
 using FFXIVClientStructs.FFXIV.Client.UI.Agent;
-using Sirensong.Game.Extensions;
+using Sirensong.Extensions;
+using Sirensong.Game.Helpers;
 using Wholist.Common;
 using Wholist.Game;
 
@@ -31,7 +32,7 @@ namespace Wholist.DataStructures
 
             this.Name = basePlayer.Name.TextValue;
             this.CompanyTag = basePlayer.CompanyTag.TextValue;
-            this.IsFriend = PlayerManager.IsPlayerFriend(basePlayer);
+            this.IsFriend = FriendHelper.IsFriend(basePlayer);
             this.IsInParty = PlayerManager.IsPlayerInParty(basePlayer);
             this.NameColour = PlayerManager.GetPlayerNameColour(this);
         }
