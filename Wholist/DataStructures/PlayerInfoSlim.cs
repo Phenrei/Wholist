@@ -1,3 +1,4 @@
+using System;
 using System.Numerics;
 using Dalamud.Game.ClientState.Objects.SubKinds;
 using FFXIVClientStructs.FFXIV.Client.UI.Agent;
@@ -89,6 +90,8 @@ namespace Wholist.DataStructures
         ///     The location of the player.
         /// </summary>
         internal Vector3? Position => this.playerCharacter.Position;
+
+        internal float Distance => Math.Min(this.playerCharacter.YalmDistanceX, this.playerCharacter.YalmDistanceZ);
 
         /// <summary>
         ///     Gets the underlying <see cref="PlayerCharacter" />.
